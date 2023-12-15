@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản đồ Việt Nam</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <style>
+        #map{
+            height: 100vh;
+            width: 100%;
+        }
+
+        .info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(141, 114, 114, 0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+
+    </style>
+
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="./Airport_polyline.js"></script>
+<script src="./DiaDanh_point.js"></script>
+<script src="./gadm36_VNM_2.js"></script>
+<script src="./KHQS_polyline.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+
+    /*===================================================
+                      OSM  LAYER               
+===================================================*/
+
+var map = L.map('map').setView([10.82302000, 106.62965000], 4);
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+osm.addTo(map);
+
+/*===================================================
+                      MARKER               
+===================================================*/
+
+var singleMarker = L.marker([10.82302000, 106.62965000]);
+singleMarker.addTo(map);
+var popup = singleMarker.bindPopup('Ho Chi Minh City')
+popup.addTo(map);
+
+/*===================================================
+                     TILE LAYER               
+===================================================*/
+
+var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+subdomains: 'abcd',
+	maxZoom: 19
+});
+CartoDB_DarkMatter.addTo(map);
+
+// Google Map Layer
+
+googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+ });
+ googleStreets.addTo(map);
+
+ // Satelite Layer
+googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+   maxZoom: 20,
+   subdomains:['mt0','mt1','mt2','mt3']
+ });
+googleSat.addTo(map);
+
+var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+ attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+subdomains: 'abcd',
+minZoom: 1,
+maxZoom: 16,
+ext: 'jpg'
+});
+Stamen_Watercolor.addTo(map);
+
+
+/*===================================================
+                      GEOJSON               
+===================================================*/
+var Airport_polyline = L.geoJSON(Airport_polyline_data).addTo(map);
+var DiaDanh_point = L.geoJSON(DiaDanh_point_data).addTo(map);
+var gadm36_VNM_2 = L.geoJSON(gadm36_VNM_2_data).addTo(map);
+var KHQS_polyline = L.geoJSON(KHQS_polyline_data).addTo(map);
+
+/*===================================================
+                      LAYER CONTROL               
+===================================================*/
+
+var baseLayers = {
+    "Satellite":googleSat,
+    "Google Map":googleStreets,
+    "Water Color":Stamen_Watercolor,
+    "OpenStreetMap": osm,
+};
+
+var overlays = {
+    "Máy bay": Airport_polyline,
+    "Địa danh": DiaDanh_point,
+    "Ranh giới hành chính Việt Nam cấp 2": gadm36_VNM_2,
+    "Ký hiệu quân sự": KHQS_polyline,
+    
+};
+
+L.control.layers(baseLayers, overlays).addTo(map);
+
+
+/*===================================================
+                      SEARCH BUTTON               
+===================================================*/
+
+L.Control.geocoder().addTo(map);
+
+
+</script>

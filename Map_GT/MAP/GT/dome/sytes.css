@@ -1,0 +1,13 @@
+#open-json-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #website-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
