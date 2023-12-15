@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "KHQS_region",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32648" } },
+"features": [
+{ "type": "Feature", "properties": { "GM_LAYER": "Level 19", "NAME": null, "LAYER": "Level 19", "PERIMETER": "683.31 m", "ENCLOSED_A": "0.01419 sq km", "OBJECTID": 0, "maTrinhBay": null, "doChinhXac": 0, "maDoiTuong": null, "loaiKetCau": null, "ten": null, "tenTuyen1": null, "tenTuyen2": null, "tenTuyen3": null, "mucChiTiet": null, "loaiDgBo": null, "chatLieu": null, "hienTrang": null, "doRongLong": 0, "doRongMat": 0, "Enabled": 0, "PhanLoaiDu": 0, "SHAPE_Leng": 0, "DGN_LEVEL": 57, "LENGTH": null, "BEARING": null, "blank": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 691742.126403792877682, 1199776.299014507327229, 0.0 ], [ 691643.654531210428104, 1199776.299014507327229, 0.0 ], [ 691696.782506009330973, 1200064.520347890909761, 0.0 ], [ 691742.126403792877682, 1199776.299014507327229, 0.0 ] ] ] ] } },
+{ "type": "Feature", "properties": { "GM_LAYER": "Level 19", "NAME": null, "LAYER": "Level 19", "PERIMETER": "683.31 m", "ENCLOSED_A": "0.01419 sq km", "OBJECTID": 0, "maTrinhBay": null, "doChinhXac": 0, "maDoiTuong": null, "loaiKetCau": null, "ten": null, "tenTuyen1": null, "tenTuyen2": null, "tenTuyen3": null, "mucChiTiet": null, "loaiDgBo": null, "chatLieu": null, "hienTrang": null, "doRongLong": 0, "doRongMat": 0, "Enabled": 0, "PhanLoaiDu": 0, "SHAPE_Leng": 0, "DGN_LEVEL": 57, "LENGTH": null, "BEARING": null, "blank": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 653577.736823538551107, 1204441.28946923208423, 0.0 ], [ 653479.264950955985114, 1204441.28946923208423, 0.0 ], [ 653532.392925755004399, 1204729.510802615666762, 0.0 ], [ 653577.736823538551107, 1204441.28946923208423, 0.0 ] ] ] ] } }
+]
+}

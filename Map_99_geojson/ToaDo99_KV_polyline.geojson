@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "ToaDo99_KV_polyline",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32648" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -389705.447830894845538, 558104.656645892071538, 0.0 ], [ 1839999.49078550725244, 565031.937141947564669, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -379471.011788146104664, 1116126.287464219378307, 0.0 ], [ 1824332.60561317554675, 1129761.232278632931411, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -362505.274921834119596, 1673984.654200643999502, 0.0 ], [ 1798381.424594862153754, 1693895.863556953147054, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -338944.587920191464946, 2231604.975169503130019, 0.0 ], [ 1762382.864584811963141, 2257164.537089294288307, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -308977.618041421170346, 2788920.365317611489445, 0.0 ], [ 1716661.798118495149538, 2819325.813503608573228, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -272843.224944474874064, 3345873.952491779346019, 0.0 ], [ 1661624.769676389405504, 3380175.865033687092364, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -389705.447830894845538, 558104.656645892071538, 0.0 ], [ -272843.224944474874064, 3345873.952491779346019, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 721753.3459334023064, 553001.721883714431897, 0.0 ], [ 692915.105179301113822, 3320469.286456720903516, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Id": 0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 1839999.49078550725244, 565031.937141947564669, 0.0 ], [ 1661624.769676389405504, 3380175.865033687092364, 0.0 ] ] ] } }
+]
+}
